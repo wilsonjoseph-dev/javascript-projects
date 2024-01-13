@@ -37,10 +37,19 @@ async function checkWeather(city) {
     }
 
     document.querySelector(".weather").style.display = "block";
+
     document.querySelector(".error").style.display = "none";
   }
 }
 
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
+});
+
+//My alteration in this project
+
+searchBox.addEventListener("keyup", (event) => {
+  if (event.key == "Enter") {
+    checkWeather(searchBox.value);
+  }
 });
